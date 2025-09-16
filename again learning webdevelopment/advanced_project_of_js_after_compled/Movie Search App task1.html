@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 2px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <input type="search" name="" id="search" placeholder="Search">
+
+    <table id="platformTable">
+        <tr>
+            <th>Platform</th>
+            <th>Entity ID</th>
+            <th>Country</th>
+            <th>Link</th>
+        </tr>
+    </table>
+</body>
+
+<script>
+    async function fetchData() {
+        let url = await fetch("https://api.song.link/v1-alpha.1/links?url=spotify%3Atrack%3A0Jcij1eWd5bDMU5iPbxe2i&userCountry=US&songIfSingle=true");
+        let url2 = await url.json();
+        console.log(url2);
+
+
+        const table = document.getElementById("platformTable");
+        let data = Object.entries(url2.linksByPlatform); // Convert object to array for looping
+
+        data.forEach(([platform, details]) => {
+            let row = document.createElement('tr');
+            row.innerHTML = `
+                <td> <h2>${platform}</h2>  </td>
+                <td> <p>${details.entityUniqueId}</p>   </td>
+                <td> <p>Country: ${details.country}</p> </td>
+                <td> <a href="${url}">Open ${platform}</a> </td>
+            `;
+            table.appendChild(row);
+        });
+     
+    }
+    let input = document.querySelector("input");
+    input.addEventListener("keyup", function () {
+        let text = input.value.toLowerCase();
+        let apple = document.querySelectorAll("#platformTable tr");
+        apple.forEach((i,h) => {
+              if (h === 0) return; 
+            let name = i.innerText.toLowerCase();
+            if (name.includes(text)) {
+                i.style.display = "";
+            }else{
+                i.style.display = "none";
+            }
+        })
+    })
+
+    fetchData();
+</script>
+
+</html>

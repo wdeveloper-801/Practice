@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker with LocalStorage</title>
+</head>
+<style>
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(15, 23, 41);
+    overflow: hidden;
+  }
+
+  .main {
+    margin-top: 3rem;
+    width: 50%;
+    height: 30vh;
+    background-color: rgb(30, 41, 59);
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+
+  input,
+  #btn,
+  select,
+  #date {
+    margin-top: 0.625rem;
+    max-width: 93%;
+    height: 1.5rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    border: none;
+    padding-left: 0.625rem;
+    background-color: rgb(50, 65, 84);
+    outline: none;
+    color: white;
+  }
+
+  #tablesetting {
+    background-color: rgb(30, 41, 59);
+    margin-top: 1rem;
+  }
+
+  td,
+  th {
+    width: 20vh;
+    height: 3.125rem;
+    text-align: center;
+    background-color: rgb(50, 65, 84);
+    color: rgba(255, 255, 255, 0.851);
+    border-radius: 14px;
+    border: none;
+  }
+
+  .delbtn,
+  .edit {
+    width: 1.9rem;
+    height: 2rem;
+    border-radius: 0.625rem;
+    color: white;
+    border: none;
+    margin-left: 1rem;
+  }
+
+  .delbtn {
+    background-color: red;
+  }
+
+  .edit {
+    background-color: orange;
+  }
+</style>
+
+<body>
+  <h2 style="color: white; font-size: 2rem;">Expense List</h2>
+  <div class="main">
+    <input type="text" id="serech" placeholder="Search">
+    <input type="text" id="titel" placeholder="Title">
+    <input type="text" id="amound" placeholder="Amound">
+    <input type="date" id="date">
+    <select id="category">
+      <option>food</option>
+      <option>transport</option>
+      <option>Bills</option>
+      <option>shoping</option>
+      <option>Others</option>
+    </select>
+    <button id="btn" style="background-color: rgb(38, 100, 235);">Add</button>
+  </div>
+
+  <table id="tablesetting">
+    <tr>
+      <th>Title</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+  </table>
+  <p id="totalAmount" style="color: white; margin-top: 1rem; font-size: 1.2rem;">Total: 0</p>
+
+</body>
+
+<script>
+  let serech = document.getElementById("serech")
+  let table = document.getElementById("tablesetting")
+  let btn = document.getElementById("btn")
+  let titel = document.getElementById("titel")
+  let amound = document.getElementById("amound")
+  let date = document.getElementById("date")
+  let categorySelect = document.getElementById("category");
+  const totalDisplay = document.getElementById("totalAmount");
+
+  let total = 0;
+  let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+  function updateTotal() {
+    total = expenses.reduce((sum, exp) => sum + exp.amount, 0);
+    totalDisplay.innerText = "Total: " + total.toFixed(2);
+  }
+
+  function saveExpenses() {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }
+
+  function renderTable() {
+    // Clear all rows except header
+    table.querySelectorAll("tr:not(:first-child)").forEach(row => row.remove());
+
+    expenses.forEach((exp, index) => {
+      let row = table.insertRow();
+      row.insertCell(0).innerText = exp.title;
+      row.insertCell(1).innerText = exp.amount;
+      row.insertCell(2).innerText = exp.date;
+      row.insertCell(3).innerText = exp.category;
+
+      let actions = row.insertCell(4);
+
+      // Delete Button
+      let delbtn = document.createElement("button");
+      delbtn.innerText = "D";
+      delbtn.className = "delbtn";
+      delbtn.onclick = function () {
+        expenses.splice(index, 1);
+        saveExpenses();
+        renderTable();
+        updateTotal();
+      };
+      actions.appendChild(delbtn);
+
+      // Edit Button
+      let editbtn = document.createElement("button");
+      editbtn.innerText = "E";
+      editbtn.className = "edit";
+      editbtn.onclick = function () {
+        titel.value = exp.title;
+        amound.value = exp.amount;
+        date.value = exp.date;
+        categorySelect.value = exp.category;
+        expenses.splice(index, 1); // remove old one
+        saveExpenses();
+        renderTable();
+        updateTotal();
+      };
+      actions.appendChild(editbtn);
+    });
+
+    updateTotal();
+  }
+
+  btn.addEventListener("click", function () {
+    let amountValue = parseFloat(amound.value);
+    if (isNaN(amountValue)) {
+      alert("Please enter a valid amount");
+      return;
+    }
+
+    let expense = {
+      title: titel.value,
+      amount: amountValue,
+      date: date.value,
+      category: categorySelect.value
+    };
+
+    expenses.push(expense);
+    saveExpenses();
+    renderTable();
+
+    // Clear inputs
+    titel.value = "";
+    amound.value = "";
+    date.value = "";
+    categorySelect.value = "";
+  });
+
+  serech.addEventListener("keyup", function () {
+    let text = serech.value.toLowerCase();
+    table.querySelectorAll("tr:not(:first-child)").forEach(row => {
+      let rowText = row.innerText.toLowerCase();
+      row.style.display = rowText.includes(text) ? "" : "none";
+    });
+  });
+
+  // Load saved data when page opens
+  renderTable();
+</script>
+
+</html>

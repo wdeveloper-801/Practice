@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(120deg, #007cf0, #00dfd8);
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+
+
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 20rem;
+        height: 10rem;
+        position: fixed;
+        left: 4rem;
+    }
+
+
+    .rig,
+    .login {
+        width: 100%;
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+        height: 2rem;
+        border-radius: 1rem;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .box2,
+    .box3 {
+        width: 15rem;
+        height: 20rem;
+        border: 2px solid black;
+        border-radius: 1rem;
+        background-color: rgb(221, 221, 221);
+        display: flex;
+        border: none;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .b2 {
+        display: none;
+    }
+
+    hr {
+        width: 99%;
+        height: 1px;
+        background-color: black;
+    }
+
+    input {
+        width: 90%;
+        height: 1.2rem;
+        margin-top: .5rem;
+        border-radius: 20px;
+        padding-left: .5rem;
+    }
+
+    .submit {
+        width: 90%;
+        height: 2rem;
+        border-radius: 1rem;
+        background-color: rgb(0, 123, 240);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    p {
+        cursor: pointer;
+    }
+
+    .box3 {
+        height: 16rem;
+    }
+
+    .login_inn {
+        margin-top: 1rem;
+    }
+
+    .b3 {
+        display: none;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="box  bb">
+            <button class="rig  ">Register</button><br>
+            <button class="login ">Login</button>
+        </div>
+        <div class="box2 b2">
+            <h2>Register</h2>
+            <hr>
+            <input type="text" class="username_ri" id="username" placeholder="Username" required>
+            <input type="email" class="email" id="email_ri" placeholder="Email" required>
+            <input type="password" id="password_ri" placeholder="Password" required>
+            <input type="password" id="Re-password_ri" placeholder="Re-Password" required>
+            <p class="p1">Login page</p>
+            <button class="submit" id="Register_inner">Register</button>
+        </div>
+        <div class="box3 b3">
+            <h2>Login</h2>
+            <hr>
+            <input type="text" class="username" id="username_log" placeholder="Username" required>
+            <input type="password" placeholder="Password" id="password_log" required>
+            <p class="p1 p2">Register page</p>
+            <button class="submit login_inn" id="login_inner">Login</button>
+        </div>
+
+    </main>
+</body>
+<script>
+    let Register = document.querySelector(".rig");
+    let Login = document.querySelector(".login");
+    let p1 = document.querySelector(".p1");
+    let p2 = document.querySelector(".p2");
+    let Register_inner = document.getElementById("Register_inner");
+    let login_inner = document.getElementById("login_inner");
+
+
+    Register.addEventListener("click", () => {
+        document.querySelector(".box2").classList.toggle("b2");
+
+    });
+    Login.addEventListener("click", () => {
+        document.querySelector(".box3").classList.toggle("b3");
+    });
+    p1.addEventListener("click", () => {
+        document.querySelector(".box2").classList.toggle("b2");
+        document.querySelector(".box3").classList.toggle("b3");
+    });
+    p2.addEventListener("click", () => {
+        document.querySelector(".box3").classList.toggle("b3");
+        document.querySelector(".box2").classList.toggle("b2");
+    });
+
+    let specialChar = /[!@#$%^&*(),.?":{}|<>]/g;
+    Register_inner.addEventListener("click", function (params) {
+        let password_ri = document.getElementById("password_ri").value;
+        let Re_password_ri = document.getElementById("Re-password_ri").value;
+        let username_ri = document.getElementById("username").value;
+        let email_ri = document.getElementById("email_ri").value;
+        if (username_ri.length <= 5) {
+            alert("Username must be at least 5 characters long.");
+            return;
+        } else if (password_ri.length <= 8) {
+            alert("Password must be at least 8 characters long.");
+            return;
+        } else if (!specialChar.test(password_ri)) {
+            alert("Password must contain at least one special character.");
+            return;
+        } else if (password_ri !== Re_password_ri) {
+            alert("Passwords do not match.");
+            return;
+        }
+         let user = JSON.parse(localStorage.getItem("user")) || []
+
+        user.push({ username_ri, email_ri, password_ri })
+
+        localStorage.setItem("user", JSON.stringify(user))
+
+        alert("Registration successful!");
+
+
+        password_ri.value = "";
+        Re_password_ri.value = "";
+        username_ri.value = "";
+        email_ri.value = "";
+    })
+    login_inner.addEventListener("click", function () {
+        let password_log = document.getElementById("password_log").value;
+        let username_log = document.getElementById("username_log").value;
+        let user = JSON.parse(localStorage.getItem("user")) || []
+        let foundUser = user.find(user => user.username_ri === username_log && user.password_ri === password_log);
+
+        if (foundUser) {
+            alert("Login successful!");
+        } else {
+            alert("Invalid username or password.");
+        }
+
+        password_log.value = "";
+        username_log.value = "";
+    })
+
+
+
+</script>
+
+</html>

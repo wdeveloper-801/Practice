@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text">
+    <button class="add">click</button>
+    <ul id="ul_list"></ul>
+</body>
+<script>
+    let input = document.querySelector("input")
+    let arr = JSON.parse(localStorage.getItem(`arr`)) || [];
+    let btn = document.querySelector(".add")
+    function Render() {
+        let ul = document.querySelector("#ul_list")
+        ul.innerHTML = ""
+        arr.forEach((a) => {
+            let li = document.createElement("li")
+
+            li.innerText = a
+
+            let del = document.createElement("button")
+            del.innerText = "del"
+            del.addEventListener('click', function (params) {
+                arr.splice(a, 1)
+                // localStorage.setItem("arr", JSON.stringify(arr));
+                Render()
+            })
+            ul.appendChild(li)
+            li.appendChild(del)
+        });
+    }
+    btn.addEventListener('click', function (params) {
+        arr.push(input.value)
+        localStorage.setItem('arr', JSON.stringify(arr))
+        input.value = ""
+        Render()
+
+    })
+    Render()
+</script>
+
+</html>

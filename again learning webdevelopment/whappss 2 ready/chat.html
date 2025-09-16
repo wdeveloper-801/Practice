@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(22, 23, 23);
+    }
+
+    .main {
+        width: 100%;
+        height: 100vh;
+    }
+
+
+    .line1 {
+        width: 100%;
+        height: 70px;
+        background-color: rgba(55, 56, 56, 0.373);
+    }
+
+    .userpic {
+        margin-left: 96px;
+        margin-top: 4px;
+    }
+
+
+    .data_enter,
+    .btn {
+        display: inline-block;
+    }
+
+    .data_enter {
+        position: fixed;
+        top: 41rem;
+        width: 89rem;
+        margin-left: 23px;
+        height: 42px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .btn {
+        position: fixed;
+        top: 41rem;
+        height: 39px;
+        width: 53px;
+        background: transparent;
+        left: 91rem;
+        margin-left: 6px;
+        border-radius: 20px;
+    }
+
+    td {
+        width: 42rem;
+        border: 2px solid black;
+        height: 53px;
+        background-color: rgb(18 153 100);
+        border: none;
+        position: relative;
+        left: 29px;
+        font-size: 20px;
+        border-radius: 20px;
+        padding-left: 11px;
+        color: white;
+        left: 51rem;
+        top: 1rem;
+    }
+
+    .name {
+        top: 5px;
+        color: white;
+        font-size: 20px;
+        position: fixed;
+        left: 159px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="line1">
+            <img src="userpic.png" class="userpic" alt="" width="60px" height="60px">
+            <p class="name"></p>
+        </div>
+        <table></table>
+        <input type="text" id="data_enter" class="data_enter" placeholder="Enter a message">
+        <button class="btn" id="btn">🔼</button>
+        <a href="index1.html" style="color: #ffffff;text-decoration: none;position: fixed;top: 1rem;left: 23px;font-size: 37px;"><</a>
+    </div>
+</body>
+<script>
+    let btn = document.getElementById('btn');
+    let input = document.getElementById('data_enter');
+    let table = document.querySelector('table');
+    btn.addEventListener('click', function () {
+        let data = input.value;
+        let row = table.insertRow();
+        let cell = row.insertCell();
+        cell.innerHTML = data;
+        input.value = '';
+    })
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+   
+
+     let name = localStorage.getItem('mr')
+    if (name) {
+       document.querySelector(".name").textContent = name;
+    } 
+    });
+</script>
+
+
+</html>

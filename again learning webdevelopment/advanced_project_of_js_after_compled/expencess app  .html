@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(15, 23, 41);
+        overflow: hidden;
+    }
+
+
+    .main {
+        margin-top: 3rem;
+        width: 50%;
+        height: 30vh;
+        background-color: rgb(30, 41, 59);
+        display: flex;
+        flex-direction: column;
+        border-radius: 14px;
+    }
+
+    input,
+    #btn,
+    select,
+    #date {
+        margin-top: 0.625rem;
+        max-width: 93%;
+        height: 1.5rem;
+        margin-left: 1rem;
+        border-radius: 10px;
+        border: none;
+        padding-left: 0.625rem;
+        background-color: rgb(50, 65, 84);
+        outline: none;
+    }
+
+    #tablesetting {
+        background-color: rgb(30, 41, 59);
+        margin-top: 1rem;
+
+    }
+
+    td,
+    th {
+        width: 20vh;
+        height: 3.125rem;
+        text-align: center;
+        background-color: rgb(50, 65, 84);
+        color: rgba(255, 255, 255, 0.351);
+        border: 2px solid black;
+        border-radius: 14px;
+        border: none;
+    }
+
+    #serech:hover,
+    #serech:focus,
+    #titel:hover,
+    #titel:focus,
+    #amound:hover,
+    #amound:focus,
+    #date:hover,
+    #data:focus {
+        color: white;
+    }
+
+    #date,
+    select {
+        color: rgba(255, 255, 255, 0.351);
+    }
+
+    .delbtn,
+    .edit {
+        width: 1.9rem;
+        height: 2rem;
+        background-color: red;
+        border-radius: 0.625rem;
+        color: white;
+        border: none;
+        margin-left: 1rem;
+    }
+</style>
+
+<body>
+    <h2
+        style="color: white; font-size: 2rem; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 2rem;">
+        Expense List</h2>
+    <div class="main">
+        <input type="text" id="serech" placeholder="Search">
+        <input type="text" id="titel" placeholder="Title">
+        <input type="text" id="amound" placeholder="Amound">
+        <input type="date" name="" id="date">
+        <select name="" id="">
+            <option id="food">food</option>
+            <option id="transport">transport</option>
+            <option id="Bills">Bills</option>
+            <option id="shoping">shoping</option>
+            <option id="Others">Others</option>
+        </select>
+        <button id="btn" style="background-color: rgb(38, 100, 235);">Add</button>
+
+    </div>
+    <table id="tablesetting">
+        <th>Title</th>
+        <th>amound</th>
+        <th>date</th>
+        <th>category</th>
+        <th>btns</th>
+    </table>
+    <p id="totalAmount" style="color: white; margin-top: 1rem; font-size: 1.2rem;">Total: 0</p>
+
+
+</body>
+<script>
+    window.onload = function () {
+        let saved = JSON.parse(localStorage.getItem("expenses") || "[]");
+        saved.forEach(exp => {
+            titel.value = exp.title;
+            amound.value = exp.amount;
+            date.value = exp.date;
+            categorySelect.value = exp.category;
+            btn.click(); // Use existing Add button to add the row
+        });
+    };
+
+    // Save all expenses to localStorage
+    function saveData() {
+        let arr = [];
+       for (let a = 0; a < table.rows.length; a++) {
+            let row = table.rows[a];
+            if (a === 0) continue; // Skip header row
+            let expense = {
+                title: row.cells[0].innerText,
+                amount: parseFloat(row.cells[1].innerText),
+                date: row.cells[2].innerText,
+                category: row.cells[3].innerText
+            };
+            arr.push(expense);
+        
+       }
+        localStorage.setItem("expenses", JSON.stringify(arr));
+    }
+
+
+
+    let serech = document.getElementById("serech")
+    let table = document.getElementById("tablesetting")
+    let btn = document.getElementById("btn")
+    let titel = document.getElementById("titel")
+    let amound = document.getElementById("amound")
+    let date = document.getElementById("date")
+    let categorySelect = document.querySelector("select");
+    const totalDisplay = document.getElementById("totalAmount");
+    let total = 0;
+    function updateTotal() {        
+        totalDisplay.innerText = "Total: " + total.toFixed(2);
+    }
+
+    btn.addEventListener("click", function () {
+
+        let amountValue = parseFloat(amound.value);
+        if (isNaN(amountValue)) {
+            alert("Please enter a valid amount");
+            return;
+        }
+
+        let row = table.insertRow()
+        let cell0 = row.insertCell(0)
+        let cell1 = row.insertCell(1)
+        let cell2 = row.insertCell(2)
+        let cell3 = row.insertCell(3)
+        let cell4 = row.insertCell(4)
+
+        cell0.innerHTML = titel.value
+        cell1.innerHTML = amound.value
+        cell2.innerHTML = date.value
+        cell3.innerHTML = categorySelect.value
+
+        //
+        let aa = row.amount = amountValue;
+        total += aa;
+        updateTotal();;
+        saveData()
+        let delbtn = document.createElement("button")
+        delbtn.innerHTML = "d"
+        delbtn.className = "delbtn"
+
+
+
+        delbtn.addEventListener("click", function () {
+            total -= aa;
+            updateTotal();
+            row.remove()
+            saveData()
+        })
+        cell4.appendChild(delbtn)
+        let edit = document.createElement("button")
+        edit.innerHTML = "e"
+        edit.className = "edit"
+        edit.style.background = "orange"
+        edit.addEventListener("click", function () {
+            if (row.contentEditable === true) {
+                row.contentEditable = false
+            } else {
+                row.contentEditable = true
+            }
+            saveData()
+        })
+        cell4.appendChild(edit)
+
+        title.value = ""
+        amound.value = ""
+        date.value = ""
+        categorySelect.value = ""
+    })
+    serech.addEventListener("keyup", function () {
+        let text = serech.value.toLowerCase()
+        let filter = table.querySelectorAll("tr:not(:first-child)");
+        filter.forEach(function (a) {
+            let text2 = a.innerText.toLowerCase()
+            if (text2.includes(text)) {
+                a.style.display = ""
+            } else {
+                a.style.display = "none"
+            }
+        })
+    })
+</script>
+
+</html>
