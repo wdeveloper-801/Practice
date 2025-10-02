@@ -1,0 +1,1492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box1 {
+    width: 100%;
+    height: 88vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.box1_inner {
+    width: 100%;
+    height: 100%;
+
+}
+
+.nav {
+    background-color: #0000004d;
+    width: 100%;
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    display: flex;
+
+
+}
+
+.nav2 {
+    width: 94%;
+    display: flex;
+    justify-content: end;
+}
+
+.line_3 {
+    width: 2rem;
+    height: 3rem;
+    margin: 1rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+
+    cursor: pointer;
+}
+
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.box_inner2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(47, 89, 112);
+    opacity: 0.7;
+    z-index: 5;
+    top: 0;
+}
+
+.box2 {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    background-color: #1c4668;
+}
+
+.box2_inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: aliceblue;
+    opacity: 0.7;
+}
+
+.img1 {
+    width: 100%;
+    height: 100%;
+}
+
+.univarty_logo {
+    height: 5rem;
+    margin: 10px;
+    margin-top: 1rem;
+}
+
+.box_inner3 {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    color: white;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 7rem;
+
+}
+
+.h2_box_inner3 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 7rem;
+    margin-left: 6rem;
+    width: 100% !important;
+    display: inline-block;
+}
+
+.h1_box_inner3 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 6rem;
+}
+
+.fall {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-left: 6rem;
+    width: 100% !important;
+    display: inline-block;
+}
+
+.h2_box_inner4 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 6rem;
+    width: 100% !important;
+    display: inline-block;
+
+}
+
+
+.btn1,
+.btn2,
+.btn3,
+.btn4 {
+    width: 20rem;
+    height: 3rem;
+    margin: 0.5rem;
+    border: 5px solid white;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    /* cursor: pointer; */
+    background-color: transparent;
+    color: white;
+    margin-left: -1rem;
+
+}
+
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover {
+    background-color: rgb(0, 75, 125) !important;
+    transform: translateY(-0.5rem);
+    /* Move up smoothly */
+    transition: transform 1s ease, background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 75, 125, 0.6);
+    /* Optional glow */
+}
+
+.box2_box2 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(229, 229, 229);
+    position: absolute;
+    top: 0;
+    opacity: 0.8;
+}
+
+.box_0 {
+    width: 25rem;
+    background-color: rgb(25, 65, 92);
+    height: 21rem;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin-top: 10rem;
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img2 {
+    width: 98%;
+    height: 98%;
+    margin-left: 1rem;
+    cursor: pointer;
+    margin-top: -1rem;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    width: 69%;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    z-index: 3;
+    margin-left: 29rem;
+    overflow: hidden;
+    margin-top: 5rem;
+}
+
+.text-h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: sans-serif;
+    color: RGB(0, 75, 125);
+    width: 100% !important;
+    display: inline-block !important;
+}
+
+.text-p {
+    color: RGB(0, 75, 125);
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.438rem;
+    width: 100% !important;
+    display: inline-block !important;
+    padding-right: 10.5rem;
+}
+
+.btn-text {
+    width: 9rem;
+    height: 3rem;
+    color: white;
+    background-color: rgb(0, 75, 125);
+    display: inline;
+    border: 5px solid white;
+    margin-left: 2rem;
+    display: inline-block;
+    margin-top: 3rem;
+}
+
+.box_0:hover {
+    transform: scale(1);
+    transition: 1s ease-in-out;
+}
+
+
+
+
+.btn-text:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+
+.box3 {
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.box3_text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    align-items: center;
+    font-weight: 800;
+    color: RGB(0, 75, 125);
+    font-size: 2.5rem;
+    font-family: sans-serif;
+}
+
+.box3_img {
+    width: 90%;
+    height: 58vh;
+    margin-left: 5rem;
+}
+
+.box4 {
+    width: 100%;
+    height: 75vh;
+    background-color: rgb(242, 250, 255);
+}
+
+.box4_text {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    align-items: center;
+}
+
+.box4_h1 {
+    color: RGB(0, 75, 125);
+    font-weight: 800;
+    font-family: sans-serif;
+    font-size: 2.5rem;
+}
+
+.box4_hr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hr_box4 {
+    width: 20%;
+    height: 0.2rem;
+    background: RGB(0, 75, 125);
+    border: none;
+}
+
+.images_box4 {
+    display: flex;
+}
+
+.box4_img1,
+.box4_img2,
+.box4_img3 {
+    width: 22%;
+    margin: 4rem;
+}
+
+.box5 {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box5_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+
+
+.box5img {
+    width: 100%;
+    height: 100%;
+}
+
+.box5imgg {
+    width: 100%;
+    height: 100%;
+}
+
+.shader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.7;
+}
+
+.box5text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    align-items: center;
+}
+
+.box5_h1 {
+    color: white;
+    font-weight: 800;
+    font-family: sans-serif;
+    font-size: 3.25rem;
+}
+
+.image_box {
+    width: 33%;
+    height: 300px;
+    margin: auto;
+    margin-top: 10rem;
+    position: absolute;
+    top: 0;
+    border: 10px solid white;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+
+}
+
+.btns-box5 {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+}
+
+.btns-box5 button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.box6 {
+    width: 100%;
+    height: 74vh;
+    background-color: rgb(242, 250, 255);
+    display: flex;
+
+}
+
+.box6_innerbox {
+    margin: 5rem;
+    background-color: rgb(200, 218, 230);
+    height: 40vh;
+    width: 30%;
+}
+
+.box6_img1 {
+    width: 100%;
+    height: 100%;
+    margin-top: -1.5rem;
+    margin-left: 1.5rem;
+}
+
+.box6_text {
+    width: 60%;
+    height: 100%;
+
+}
+
+.h2_box6 {
+    width: 100%;
+    color: RGB(0, 75, 125);
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 3rem;
+}
+
+.box6p1,
+.box6p2 {
+    color: RGB(0, 75, 125);
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.438rem;
+    margin-top: 1rem;
+    margin-right: 3rem;
+}
+
+.box6_btn {
+    width: 9rem;
+    height: 3rem;
+    margin-top: 1rem;
+    background-color: rgb(0, 75, 125);
+    color: white;
+    border: 5px solid white;
+}
+
+.box7 {
+    width: 100%;
+    height: 64vh;
+    background-color: rgb(242, 250, 255);
+    display: flex;
+
+}
+
+.box7_text {
+    width: 60%;
+    height: 100%;
+}
+
+.box7_h2 {
+    width: 100%;
+    color: RGB(0, 75, 125);
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+.box7_p {
+    color: RGB(0, 75, 125);
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.438rem;
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.box7_btn {
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+
+.box7_innerbox {
+    margin: 5rem;
+    background-color: rgb(200, 218, 230);
+    height: 40vh;
+    width: 30%;
+}
+
+.box7_img2 {
+    width: 100%;
+    height: 100%;
+    margin: -1.5rem;
+}
+
+.box8 {
+    width: 100%;
+    height: auto;
+    background-color: rgb(242, 250, 255);
+    overflow: hidden;
+}
+
+.box8text {
+    width: 100%;
+    text-align: center;
+}
+
+.box8-h2 {
+    width: 100%;
+    color: RGB(0, 75, 125);
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.box8-cam {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.box8-can1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(242, 250, 255);
+}
+
+.box8-img1 {
+    height: 87vh;
+    width: 50%;
+    float: inline-end;
+    margin-top: 3rem;
+    margin-right: 8rem;
+    position: relative;
+    z-index: 0;
+}
+
+
+.tasks {
+    width: 50%;
+    height: auto;
+    background: #ecf4f9;
+    padding: 2rem;
+    position: relative;
+    z-index: 5;
+    margin-top: 5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+}
+
+details {
+    background-color: rgb(247, 250, 252);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 2rem;
+    margin-top: 2rem;
+}
+
+
+summary {
+    font-weight: bolder;
+    font-size: 2rem;
+    color: #000000;
+    position: relative;
+    padding-right: 2rem;
+    /* Space for the custom arrow */
+    font-weight: bold;
+    font-size: 1.1rem;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+}
+
+details p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+
+details summary::after {
+    content: '▶';
+    /* Right-pointing arrow */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+    color: #000000;
+}
+
+details[open] summary::after {
+    content: '▼';
+    /* Down-pointing arrow when open */
+}
+
+.box9 {
+    width: 100%;
+    height: 52vh;
+    position: relative;
+    background-color: aqua;
+}
+
+.box9-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boxshader_box9 {
+    width: 100%;
+    height: 100%;
+    background-color: #1c4668;
+    position: absolute;
+    top: 0;
+    opacity: 0.8;
+}
+
+.box9-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.box9_h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.25rem;
+    font-family: sans-serif;
+    font-weight: 800;
+    margin-top: 2rem;
+}
+
+.box9_flex {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.box9_flex h1 {
+    color: white;
+    margin-left: 2rem;
+    font-size: 4.313rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-left: 6rem;
+}
+
+.box9_flex2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+
+    margin-top: 12rem;
+}
+
+.box9_flex2 h1 {
+    margin-left: 6rem;
+    margin-right: 5rem;
+    font-size: 1rem;
+}
+
+.box10 {
+    width: 100%;
+    height: 60vh;
+    background-color: rgb(0, 28, 56);
+    position: relative;
+}
+
+.box10_univertylogo {
+    width: 23rem;
+    margin: 5rem;
+}
+
+.box10text {
+    display: flex;
+    align-items: center;
+    width: 71.6%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    margin-left: 27rem;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    margin-left: 7rem;
+    margin-bottom: 5rem;
+}
+
+li {
+    margin: 0.5rem;
+    color: rgb(255 255 255 / 63%);
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn1,
+.btn2,
+.btn3,
+.btn4 {
+    padding-top: 0.5rem;
+    font-size: 1.1rem;
+    overflow: hidden;
+}
+
+.btn3 {
+    height: 4rem;
+}
+
+.openopen {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(4 48 80);
+    display: none;
+}
+
+.cross {
+    float: right;
+    cursor: pointer;
+}
+
+.text_open_open {
+    width: 100%;
+    height: 28vh;
+    /* background-color: aqua; */
+}
+
+.open_open_h1 {
+    font-size: 10.938rem;
+    color: RGBA(5, 5, 5, 0.33);
+    font-family:
+        " Raleway (woff2)", "sans-serif";
+    font-weight: 900;
+    text-align: center;
+}
+
+.open {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+}
+
+
+.open li {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color:
+        RGB(255, 255, 255);
+    font-family:
+        "Public Sans",
+        sans-serif;
+    font-weight: 700;
+    margin-left: 3rem;
+    color: white;
+}
+
+.open li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    /* vertically center the dot */
+    width: 1rem;
+    height: 1rem;
+    background-color: red;
+    border-radius: 50%;
+    /* Makes it a circle */
+}
+
+/* ✅ Force Library to next line */
+.break_line {
+    width: 100%;
+}
+
+.flll {
+    display: flex;
+}
+
+.open2 {
+    margin: 0;
+    padding: 0;
+    width: 79%;
+    height: 20vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
+
+.open2 li {
+    font-size: 1.5rem;
+    color:
+        RGB(255, 255, 255);
+    font-weight: 400;
+    font-family: "Montserrat (woff2)",
+        "sans-serif";
+    padding: 2rem;
+    padding-bottom: 0rem;
+
+}
+
+.opendetails {
+    width: 25rem;
+    height: 55vh;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.opendetails h2 {
+    color: white;
+    font-size: 2rem;
+    font-family: "Public Sans"
+        sans-serif;
+    font-weight: 800;
+}
+
+.opendetails p {
+    color: white;
+    margin: 1rem;
+    margin-left: 0;
+}
+
+.open_hr {
+    height: 2px;
+    background-color: rgb(16, 100, 156);
+    border: none;
+    width: 95%;
+    margin-left: 2.2rem;
+}
+
+a {
+    color: white;
+}
+
+
+.open_hr {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.open_open_h1 {
+    font-size: 6rem;
+}
+
+.opendetails {
+    margin: 0;
+    padding: 0;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+
+
+@media (max-width: 1024px) {
+
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10 {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .box8-h2 {
+        margin-top: 2rem;
+    }
+
+    .nav2 {
+        max-width: 90%;
+        width: auto;
+    }
+
+    .box1 {
+        min-height: 98vh;
+        height: auto;
+    }
+
+    .box_0 {
+        display: block;
+    }
+
+    .text {
+        display: block;
+        margin-left: 1rem;
+        margin-top: 24rem;
+    }
+
+
+
+    .text-h2 {
+        font-size: 22px;
+    }
+
+    .text-p {
+        font-size: 1rem;
+        padding-right: 1.5rem;
+    }
+
+    .btn-text {
+        margin-top: 2rem;
+        margin-left: 0rem;
+    }
+
+    .box2,
+    .text {
+        display: block;
+    }
+
+    .box2,
+    .img1 {
+        min-height: 104vh;
+        height: auto;
+
+    }
+
+    .text {
+        margin-left: 1rem;
+        margin-top: 24rem;
+        width: 100%;
+    }
+
+    .fall {
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+        margin-left: 1rem;
+    }
+
+    .h2_box_inner4 {
+        margin: 0;
+        padding: 0;
+        margin-left: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .h2_box_inner3 {
+        font-size: 1.2rem;
+        margin-top: 8rem;
+        margin-left: 1rem;
+    }
+
+    .btn {
+        margin-left: 2rem;
+    }
+
+    .univarty_logo {
+        max-width: 80%;
+        width: auto;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+
+    .nav {
+        overflow: hidden;
+    }
+
+    .box3_img {
+        margin-left: 1rem;
+    }
+
+    .images_box4 {
+        display: block;
+
+    }
+
+    .box4 {
+        width: 100%;
+        height: auto;
+    }
+
+    .box4_img1,
+    .box4_img2,
+    .box4_img3 {
+        max-width: 90%;
+        margin: 2rem;
+        width: auto;
+    }
+
+    .box5_h1 {
+        font-size: 1.5rem;
+    }
+
+    .image_box {
+        width: 81%;
+    }
+
+    .box6_innerbox {
+        display: none;
+    }
+
+    .box5 {
+        min-height: 46vh;
+        max-height: 80vh;
+        height: auto;
+    }
+
+    .box6 {
+        min-height: 30vh;
+        max-height: 216vh;
+        height: auto;
+    }
+
+    .box6_text {
+        margin-left: 3rem;
+        width: 100%;
+
+    }
+
+    .box7_innerbox {
+        display: none;
+    }
+
+    .box7_text {
+        width: 100%;
+    }
+
+    .box7 {
+        min-height: 22vh;
+        max-height: 135vh;
+        height: auto;
+    }
+
+    .box7_h2,
+    .box7_p,
+    .box7_btn {
+        margin-left: 2rem;
+    }
+
+    .box8-img1 {
+        display: none;
+    }
+
+    .tasks {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .box_0 {
+        max-width: 25rem;
+        width: auto;
+        overflow: hidden;
+    }
+
+
+    .box9_flex2 h1 {
+        margin-left: 0rem;
+        margin-right: 1rem;
+        font-size: 0.5rem;
+    }
+
+    .box9_flex2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 600;
+        margin-top: 6rem;
+    }
+
+    .box9_flex h1 {
+        color: white;
+        margin-left: 2rem;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+
+    .box9_h2 {
+        font-size: 1rem;
+        margin-top: 2rem;
+    }
+
+    .box9 {
+        max-height: 20vh;
+        height: auto;
+    }
+
+    .box10 {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    ul {
+        margin: 0;
+        margin-top: 2rem;
+    }
+
+    .box10text {
+        display: flex;
+        align-items: center;
+        width: 71.6%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        margin-left: -4rem;
+        color: white;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .box10_univertylogo {
+        width: 18rem;
+        margin: 0;
+    }
+
+    .box10text {
+        display: block;
+        margin: 0;
+        padding: 0;
+        margin-left: 1rem;
+        margin-top: 4rem;
+    }
+
+    .btn1,
+    .btn2,
+    .btn3,
+    .btn4 {
+        width: 11rem;
+        font-size: 0.8rem;
+    }
+
+    .box4_h1 {
+        font-size: 2rem;
+    }
+
+    .h2_box6 {
+        font-size: 22px;
+    }
+
+    .box7_h2 {
+        font-size: 22px;
+    }
+
+    .box5imgg {
+        width: 387%;
+        height: 100%;
+    }
+
+
+}
+
+
+
+@media (max-width:500px) and (min-height: 700px) and (max-height: 930px) {
+
+    .box2,
+    .img1 {
+        min-height: 81vh;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .box1 {
+        min-height: 95vh;
+        height: auto;
+    }
+
+}
+
+@media (max-width:500px) and (min-height: 800px) and (max-height: 950px) {
+
+    .box2,
+    .img1 {
+        min-height: 75vh;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .text {
+        margin: 0;
+        margin-top: 25rem !important;
+        margin-left: 1rem;
+    }
+
+    .box1 {
+        min-height: 72vh;
+        height: auto;
+    }
+}
+
+@media (min-width:481px) and (max-width: 1024px) {
+    .box1 {
+        min-height: 80vh;
+        height: auto;
+    }
+
+    .nav {
+        width: 100%;
+        height: 7rem;
+    }
+
+    .box2,
+    .img1 {
+        min-height: 102vh;
+        height: auto;
+    }
+
+    .text-p {
+        font-size: 1.2rem;
+        padding-right: 2rem;
+    }
+
+    .box4_h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav2 {
+        width: 94%;
+        display: flex;
+        justify-content: end;
+    }
+
+      .box2, .img1 {
+        min-height: 99vh;
+        max-height: 100vh;
+        height: auto;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10 {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .nav {
+        width: 100%;
+        height: 7rem;
+    }
+
+    .nav2 {
+        width: 94%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .box1 {
+        min-height: 90vh;
+        height: auto;
+    }
+
+    ul {
+        margin-left: 2rem;
+    }
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+
+@media(max-width:699px) and (max-height: 950px) {
+    .openopen {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .text_open_open {
+        height: 35vh;
+    }
+
+    .flll {
+        display: block;
+    }
+
+    .opendetails {
+        display: block;
+    }
+
+    .open2 {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+@media(max-width:400px) {
+    .opendetails p {
+        padding-right: 10rem !important;
+        padding-right: auto;
+    }
+
+    .opendetails h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 700px) and (max-height: 1400px) {
+    .openopen {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .text_open_open {
+        height: 13vh;
+        margin-bottom: 5rem;
+    }
+
+
+    .open_open_h1 {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 700px) and (max-height: 1400px) and (max-width: 1024px) and (min-height: 1000px) {
+    .box2 {
+        min-height: 58vh;
+        height: auto;
+    }
+
+    .img1 {
+        min-height: 58vh;
+    }
+
+    .box2_box2 {
+        min-height: 58vh;
+    }
+
+    .box1 {
+        min-height: 50vh;
+        height: auto;
+    }
+
+    .box3 {
+        height: 75vh;
+    }
+
+    .box5 {
+        max-height: 60vh;
+    }
+
+    .image_box {
+
+        height: 24rem;
+        width: 81%;
+    }
+
+    .box5_h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width:911px) and (max-width: 1025px) and (min-height: 1350px) and (max-height: 1370px) {
+    .box2 {
+        min-height: 56vh;
+        height: auto;
+    }
+
+    .img1 {
+        min-height: 56vh;
+    }
+
+    .box2_box2 {
+        min-height: 56vh;
+    }
+
+    .text {
+        margin-top: 26rem;
+    }
+
+    .text-h2 {
+        font-size: 2.7rem;
+    }
+
+    .text-p {
+        font-size: 1.9rem;
+    }
+
+
+    .box1 {
+        min-height: 38vh;
+        height: auto;
+    }
+
+    .box5 {
+        max-height: 53vh;
+    }
+
+    .image_box {
+        height: 30rem;
+        width: 81%;
+    }
+}
